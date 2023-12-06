@@ -1,13 +1,18 @@
 {
   "files": {
-    "main.css": "/Drive-the-Pun-Way/static/css/main.7acaea2f.css",
+    "main.css": "/Drive-the-Pun-Way/static/css/main.c21f6d90.css",
     "main.js": "/Drive-the-Pun-Way/static/js/main.673b4eda.js",
+    "static/media/Manrope-Bold.woff": "/Drive-the-Pun-Way/static/media/Manrope-Bold.b58ad077d4b9e470da36.woff",
+    "static/media/Manrope-SemiBold.woff": "/Drive-the-Pun-Way/static/media/Manrope-SemiBold.731eb9eb4f459cb9aa9c.woff",
+    "static/media/Manrope-Regular.woff": "/Drive-the-Pun-Way/static/media/Manrope-Regular.d72fa7761dfd047e18b2.woff",
+    "static/media/Manrope-Medium.woff": "/Drive-the-Pun-Way/static/media/Manrope-Medium.590162dc7e58c219ebc0.woff",
+    "static/media/Manrope-ExtraBold.woff": "/Drive-the-Pun-Way/static/media/Manrope-ExtraBold.62db619324abfe6f5a55.woff",
     "index.html": "/Drive-the-Pun-Way/index.html",
-    "main.7acaea2f.css.map": "/Drive-the-Pun-Way/static/css/main.7acaea2f.css.map",
+    "main.c21f6d90.css.map": "/Drive-the-Pun-Way/static/css/main.c21f6d90.css.map",
     "main.673b4eda.js.map": "/Drive-the-Pun-Way/static/js/main.673b4eda.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
+    "static/css/main.c21f6d90.css",
     "static/js/main.673b4eda.js"
   ]
 }
