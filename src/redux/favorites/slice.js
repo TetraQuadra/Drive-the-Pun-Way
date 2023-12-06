@@ -11,7 +11,7 @@ const favoriteSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder.addCase(testAction.fulfilled, (state, action) => {
-      state.ids = action.payload;
+      state.ids = [...state.ids, action.payload];
     });
   },
 });
