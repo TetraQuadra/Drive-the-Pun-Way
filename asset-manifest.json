@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Drive-the-Pun-Way/static/css/main.7acaea2f.css",
+    "main.js": "/Drive-the-Pun-Way/static/js/main.673b4eda.js",
+    "index.html": "/Drive-the-Pun-Way/index.html",
+    "main.7acaea2f.css.map": "/Drive-the-Pun-Way/static/css/main.7acaea2f.css.map",
+    "main.673b4eda.js.map": "/Drive-the-Pun-Way/static/js/main.673b4eda.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.673b4eda.js"
+  ]
+}
