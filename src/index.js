@@ -10,7 +10,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter basename="Drive-the-Pun-Way">
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate loading={'loading'} persistor={persistor}>
         <App />
       </PersistGate>
     </Provider>

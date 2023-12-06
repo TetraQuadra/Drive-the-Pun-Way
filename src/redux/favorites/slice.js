@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { testAction } from './operations';
 
 const initialState = {
   ids: [],
@@ -8,7 +9,11 @@ const initialState = {
 const favoriteSlice = createSlice({
   name: 'favorites',
   initialState,
-  extraReducers: {},
+  extraReducers: builder => {
+    builder.addCase(testAction.fulfilled, (state, action) => {
+      state.ids = action.payload;
+    });
+  },
 });
 
 export const favoritesReducer = favoriteSlice.reducer;

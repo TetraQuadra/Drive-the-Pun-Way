@@ -23,7 +23,7 @@ export const store = configureStore({
     favorites: persistReducer(favoritesPersistConfig, favoritesReducer),
   },
   middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat({
+    getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
