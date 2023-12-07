@@ -1,35 +1,7 @@
 @import-normalize;
 @import 'variables.css';
 
-@font-face {
-  font-family: 'Manrope-Regular';
-  src: local('Manrope-Regular'),
-    url('./fonts/Manrope/Manrope-Regular.woff') format('truetype');
-}
-
-@font-face {
-  font-family: 'Manrope-Medium';
-  src: local('Manrope-Medium'),
-    url('./fonts/Manrope/Manrope-Medium.woff') format('truetype');
-}
-
-@font-face {
-  font-family: 'Manrope-SemiBold';
-  src: local('Manrope-SemiBold'),
-    url('./fonts/Manrope/Manrope-SemiBold.woff') format('truetype');
-}
-
-@font-face {
-  font-family: 'Manrope-Bold';
-  src: local('Manrope-Bold'),
-    url('./fonts/Manrope/Manrope-Bold.woff') format('truetype');
-}
-
-@font-face {
-  font-family: 'Manrope-ExtraBold';
-  src: local('Manrope-ExtraBold'),
-    url('./fonts/Manrope/Manrope-ExtraBold.woff') format('truetype');
-}
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 *,
 *::before,
@@ -80,7 +52,7 @@ body {
   min-height: 100vh;
   margin: 0;
 
-  font-family: 'Manrope-Regular';
+  font-family: 'Manrope';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 14px;
