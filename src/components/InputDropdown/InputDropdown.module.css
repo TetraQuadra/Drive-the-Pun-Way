@@ -1,9 +1,6 @@
 .dropdown {
     position: relative;
-    display: flex;
-    align-items: center;
     width: 300px;
-
 }
 
 .dropdown input {
@@ -32,7 +29,6 @@
     right: 0;
     border-radius: 14px;
     border: 1px solid rgba(18, 20, 23, 0.05);
-    max-height: 200px;
     overflow: auto;
 }
 
@@ -41,10 +37,39 @@
     font-weight: 600;
     padding: 5px 10px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .dropdown .option:hover {
     background: #F7F7FB !important;
+}
+
+.label {
+    display: block;
+    font-weight: 500;
+    color: #8A8A89;
+    margin-bottom: 8px;
+}
+
+.shevron {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-75%);
+    transition: var(--transform-timing);
+    pointer-events: none;
+}
+
+.shevron.active {
+    transform: translateY(-75%) rotate(180deg);
+}
+
+.closeButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-75%);
+    right: 15%;
 }
 
 ::-webkit-scrollbar {

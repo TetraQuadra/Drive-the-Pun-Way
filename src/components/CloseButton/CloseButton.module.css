@@ -1,0 +1,22 @@
+.button {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 4px;
+    border-radius: 8px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    transition: box-shadow var(--transform-timing);
+}
+
+.button:hover {
+    box-shadow: var(--button-hover-boxshadow);
+}
+
+.cross {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

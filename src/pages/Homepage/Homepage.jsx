@@ -34,6 +34,7 @@ function Homepage() {
             <LikeButton />
             <LoadMoreButton />
             <InputDropdown options={options} onChange={onChange} />
+
         </>
     )
 }

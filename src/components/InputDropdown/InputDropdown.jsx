@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './InputDropdown.module.css';
+import { ReactComponent as Shevron } from 'images/icons/chevron-down.svg';
+import CloseButton from 'components/CloseButton/CloseButton';
 
-const InputDropdown = ({ options, placeholder = 'Select option', onChange }) => {
+const InputDropdown = ({ label = 'Label', options, placeholder = 'Select option', onChange }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(placeholder)
     const inputRef = useRef(null);
@@ -11,6 +13,12 @@ const InputDropdown = ({ options, placeholder = 'Select option', onChange }) => 
         onChange(option);
         setIsOpen(false);
     };
+
+    const handleEmptySelect = () => {
+        setSelectedOption(placeholder)
+        onChange(null);
+        setIsOpen(false);
+    }
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -36,33 +44,36 @@ const InputDropdown = ({ options, placeholder = 'Select option', onChange }) => 
 
 
     return (
-        <>
+        <div className={styles.inputWrapper}>
+            <label className={styles.label}>{label}</label>
             <div ref={inputRef} className={styles.dropdown}>
                 <input
                     type="button"
                     className={styles.input}
-                    onFocus={() => setIsOpen(true)}
+                    onClick={() => setIsOpen(!isOpen)}
                     value={selectedOption}
                 />
+                <Shevron className={`${styles.shevron} ${isOpen && styles.active}`} />
                 {isOpen && (
                     <ul className={styles.options}>
+                        <li
+                            className={styles.option}
+                            onClick={() => handleEmptySelect()}
+                        >{placeholder}</li>
                         {options.map((option) => (
                             <li
                                 key={option.value}
-                                id={'inputDropItem'}
                                 className={styles.option}
                                 onClick={() => handleOptionClick(option)}
-                                style={{
-                                    backgroundColor: selectedOption === option.value ? '#f0f0f0' : 'white',
-                                }}
                             >
                                 {option.label}
                             </li>
                         ))}
                     </ul>
                 )}
+                {selectedOption && (selectedOption !== placeholder) && <CloseButton onClick={() => handleEmptySelect()} className={styles.closeButton} />}
             </div>
-        </>
+        </div>
     );
 };
 

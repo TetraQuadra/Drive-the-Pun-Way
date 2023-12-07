@@ -6,3 +6,7 @@
     text-decoration: underline;
     color: var(--main-color);
 }
+
+.button:hover {
+    color: var(--hover-color);
+}
