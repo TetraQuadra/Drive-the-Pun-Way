@@ -1,20 +1,15 @@
 {
   "files": {
-    "main.css": "/Drive-the-Pun-Way/static/css/main.b7a2acdc.css",
-    "main.js": "/Drive-the-Pun-Way/static/js/main.e0f9d574.js",
-    "static/media/Manrope-Bold.woff": "/Drive-the-Pun-Way/static/media/Manrope-Bold.b58ad077d4b9e470da36.woff",
-    "static/media/Manrope-SemiBold.woff": "/Drive-the-Pun-Way/static/media/Manrope-SemiBold.731eb9eb4f459cb9aa9c.woff",
-    "static/media/Manrope-Regular.woff": "/Drive-the-Pun-Way/static/media/Manrope-Regular.d72fa7761dfd047e18b2.woff",
-    "static/media/Manrope-Medium.woff": "/Drive-the-Pun-Way/static/media/Manrope-Medium.590162dc7e58c219ebc0.woff",
-    "static/media/Manrope-ExtraBold.woff": "/Drive-the-Pun-Way/static/media/Manrope-ExtraBold.62db619324abfe6f5a55.woff",
+    "main.css": "/Drive-the-Pun-Way/static/css/main.48f228b0.css",
+    "main.js": "/Drive-the-Pun-Way/static/js/main.4d902a97.js",
     "index.html": "/Drive-the-Pun-Way/index.html",
     "static/media/heart-normal.svg": "/Drive-the-Pun-Way/static/media/heart-normal.296feb59ac66412fedd2622e6236b2a9.svg",
     "static/media/heart-active.svg": "/Drive-the-Pun-Way/static/media/heart-active.02306de4fa6d5bfcacca240b95ef8ed6.svg",
-    "main.b7a2acdc.css.map": "/Drive-the-Pun-Way/static/css/main.b7a2acdc.css.map",
-    "main.e0f9d574.js.map": "/Drive-the-Pun-Way/static/js/main.e0f9d574.js.map"
+    "main.48f228b0.css.map": "/Drive-the-Pun-Way/static/css/main.48f228b0.css.map",
+    "main.4d902a97.js.map": "/Drive-the-Pun-Way/static/js/main.4d902a97.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7a2acdc.css",
-    "static/js/main.e0f9d574.js"
+    "static/css/main.48f228b0.css",
+    "static/js/main.4d902a97.js"
   ]
 }
