@@ -1,6 +1,5 @@
 @import-normalize;
 @import 'variables.css';
-/* bring in normalize.css styles */
 
 @font-face {
   font-family: 'Manrope-Regular';
@@ -90,7 +89,6 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
 
-  /* background-color: #ffffff; */
   background-color: var(--background-color);
 
   overflow-y: scroll;
