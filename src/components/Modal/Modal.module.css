@@ -79,13 +79,6 @@
     margin-bottom: 24px;
 }
 
-.content h3 {
-    color: #121417;
-    font-weight: 500;
-    line-height: 20px;
-    margin-bottom: 8px;
-}
-
 .accessories {
     margin-bottom: 24px;
 }
@@ -116,6 +109,14 @@
 
 .rentalConditions {
     margin-bottom: 24px;
+}
+
+.secondaryHeader {
+    color: #121417;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 8px;
+    font-size: 14px;
 }
 
 .rentalConditions ul {

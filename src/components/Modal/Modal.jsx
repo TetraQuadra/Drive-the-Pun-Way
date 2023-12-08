@@ -7,7 +7,7 @@ function Modal({ handleClose, data }) {
 
     const onClose = (e) => {
         if (e.target === e.currentTarget) {
-            console.log('first')
+            handleClose()
         }
     }
 
@@ -31,7 +31,7 @@ function Modal({ handleClose, data }) {
                 <ul>
                     <li>{data.city}</li>
                     <li>{data.country}</li>
-                    <li>{data.id}</li>
+                    <li>Id: {data.id}</li>
                     <li>Year: {data.year}</li>
                     <li>Type: {data.type}</li>
                     <li>Fuel consumption: {data.fuelConsumption}</li>
@@ -44,7 +44,7 @@ function Modal({ handleClose, data }) {
     const Accessories = ({ data }) => {
         return (
             <div className={styles.accessories}>
-                <h3>Accessories and functionalities:</h3>
+                <h3 className={styles.secondaryHeader}>Accessories and functionalities:</h3>
                 <ul>
                     {data.accessories.map((characteristic) => (
                         <li key={characteristic}>
@@ -65,9 +65,9 @@ function Modal({ handleClose, data }) {
 
     const RentalConditions = ({ data }) => {
         const array = data.rentalConditions.split('\n');
-        console.log(array);
         return (
             <div className={styles.rentalConditions}>
+                <h3 className={styles.secondaryHeader}>Rental conditions:</h3>
                 <ul>
                     {array.map((characteristic, index) => {
                         const [firstHalf, secondHalf] = characteristic.split(':');
