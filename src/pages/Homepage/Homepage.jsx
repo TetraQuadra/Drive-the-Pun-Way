@@ -65,7 +65,7 @@ function Homepage() {
             <LikeButton />
             <LoadMoreButton />
             <InputDropdown options={options} onChange={onChange} />
-            <Modal data={data} />
+            {/* <Modal data={data} /> */}
         </>
     )
 }

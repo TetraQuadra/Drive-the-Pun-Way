@@ -1,0 +1,18 @@
+.filter {
+    display: flex;
+    gap: 18px;
+    align-items: flex-end;
+}
+
+.brandInput {
+    width: 224px;
+}
+
+.priceInput {
+    width: 126px;
+}
+
+.buttonSetFilter {
+    width: 136px;
+    height: 48px;
+}

@@ -3,14 +3,14 @@ import styles from './InputDropdown.module.css';
 import { ReactComponent as Shevron } from 'images/icons/chevron-down.svg';
 import CloseButton from 'components/CloseButton/CloseButton';
 
-const InputDropdown = ({ label = 'Label', options, placeholder = 'Select option', onChange }) => {
+const InputDropdown = ({ label = 'Label', options, placeholder = 'Select option', onChange, className, name }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(placeholder)
     const inputRef = useRef(null);
 
     const handleOptionClick = (option) => {
         setSelectedOption(option.label)
-        onChange(option);
+        onChange(option.value)
         setIsOpen(false);
     };
 
@@ -44,10 +44,11 @@ const InputDropdown = ({ label = 'Label', options, placeholder = 'Select option'
 
 
     return (
-        <div className={styles.inputWrapper}>
+        <div className={`${styles.inputWrapper} ${className}`}>
             <label className={styles.label}>{label}</label>
             <div ref={inputRef} className={styles.dropdown}>
                 <input
+                    name={name}
                     type="button"
                     className={styles.input}
                     onClick={() => setIsOpen(!isOpen)}
