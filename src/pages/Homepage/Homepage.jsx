@@ -4,6 +4,7 @@ import styles from './Homepage.module.css'
 import LikeButton from 'components/LikeButton/LikeButton'
 import LoadMoreButton from 'components/LoadMoreButton/LoadMoreButton'
 import InputDropdown from 'components/InputDropdown/InputDropdown'
+import Modal from 'components/Modal/Modal'
 
 function Homepage() {
 
@@ -26,6 +27,36 @@ function Homepage() {
         { value: 'asfg', label: 'qwerty' },
     ];
 
+    const data = {
+        id: 9582,
+        year: 2008,
+        make: "Buick",
+        model: "Enclave",
+        type: "SUV",
+        img: "https://res.cloudinary.com/ditdqzoio/image/upload/v1687252635/cars/buick_enclave.jpg",
+        description: "The Buick Enclave is a stylish and spacious SUV known for its comfortable ride and luxurious features.",
+        fuelConsumption: "10.5",
+        engineSize: "3.6L V6",
+        accessories: [
+            "Leather seats",
+            "Panoramic sunroof",
+            "Power liftgate"
+        ],
+        functionalities: [
+            "Premium audio system",
+            "Remote start",
+            "Blind-spot monitoring"
+        ],
+        rentalPrice: "$40",
+        rentalCompany: "Luxury Car Rentals",
+        address: "123 Example Street, Kiev, Ukraine",
+        rentalConditions: "Minimum age: 25\nValid driver's license\nSecurity deposit required\nCredit card required",
+        mileage: 5858,
+        city: 'Kiev',
+        country: 'Ukraine',
+
+    };
+
 
     return (
         <>
@@ -34,7 +65,7 @@ function Homepage() {
             <LikeButton />
             <LoadMoreButton />
             <InputDropdown options={options} onChange={onChange} />
-
+            <Modal data={data} />
         </>
     )
 }
