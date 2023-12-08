@@ -1,4 +1,3 @@
-import Button from 'components/Button/Button';
 import CloseButton from 'components/CloseButton/CloseButton';
 import Link from 'components/Link/Link';
 import React, { useEffect } from 'react';
@@ -24,7 +23,7 @@ function Modal({ handleClose, data }) {
         return () => {
             document.removeEventListener('keydown', onKeyDown);
         };
-    }, []);
+    }, [handleClose]);
 
     const Characteristics = ({ data }) => {
         return (
