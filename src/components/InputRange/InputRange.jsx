@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styles from './InputRange.module.css';
 
-function InputRange({ onChange, label = 'Set range' }) {
+function InputRange({ nameMin, nameMax, onChange, label = 'Set range' }) {
+    console.log(nameMin, nameMax)
     const [range, setRange] = useState({
-        min: null,
-        max: null
+        [nameMin]: null,
+        [nameMax]: null
     });
 
     const handleChange = (e) => {
@@ -15,7 +16,7 @@ function InputRange({ onChange, label = 'Set range' }) {
     };
 
     useEffect(() => {
-        onChange(range)
+        onChange({ [nameMin]: range[nameMin], [nameMax]: range[nameMax] })
     }, [range])
 
 
@@ -26,19 +27,19 @@ function InputRange({ onChange, label = 'Set range' }) {
                 <input
                     placeholder='From'
                     type="number"
-                    name="min"
+                    name={nameMin}
                     min={0}
                     max={10000}
-                    value={range.min || ''}
+                    value={range[nameMin] | ''}
                     onChange={(e) => handleChange(e)}
                 />
                 <input
                     placeholder='To'
                     type="number"
-                    name="max"
+                    name={nameMax}
                     min={0}
                     max={10000}
-                    value={range.max || ''}
+                    value={range[nameMax] | ''}
                     onChange={(e) => handleChange(e)}
                 />
             </div>

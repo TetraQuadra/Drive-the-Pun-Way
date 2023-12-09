@@ -15,25 +15,10 @@ function Filter({ setFilter }) {
 
     const pricesOptions = fillPricesFilter(10, 100, 10)
 
-    const onBrandChange = (brand) => {
+    const onFilterChange = (value) => {
         setFilterState({
             ...filterState,
-            brand
-        });
-    }
-
-    const onMaxPriceChange = (value) => {
-        setFilterState({
-            ...filterState,
-            maxPrice: value
-        });
-    }
-
-    const onMileageRangeChange = (range) => {
-        setFilterState({
-            ...filterState,
-            minMileage: range.min,
-            maxMileage: range.max,
+            ...value
         });
     }
 
@@ -49,17 +34,17 @@ function Filter({ setFilter }) {
             <InputDropdown
                 options={options}
                 name={'brand'}
-                onChange={onBrandChange}
+                onChange={onFilterChange}
                 className={styles.brandInput}
                 label='Car brand' />
             <InputDropdown
                 options={pricesOptions}
                 name={'maxPrice'}
-                onChange={onMaxPriceChange}
+                onChange={onFilterChange}
                 className={styles.priceInput}
                 placeholder={'To $'}
                 label='Price / 1 hour' />
-            <InputRange onChange={onMileageRangeChange} />
+            <InputRange nameMax={'maxMileage'} nameMin={'minMileage'} onChange={onFilterChange} />
             <Button className={styles.buttonSetFilter} onClick={() => onFilterSet(filterState)}>Search</Button>
         </div>
     )

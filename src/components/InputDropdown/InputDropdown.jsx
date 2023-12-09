@@ -10,7 +10,7 @@ const InputDropdown = ({ label = 'Label', options, placeholder = 'Select option'
 
     const handleOptionClick = (option) => {
         setSelectedOption(option.label)
-        onChange(option.value)
+        onChange({ [name]: option.value })
         setIsOpen(false);
     };
 
