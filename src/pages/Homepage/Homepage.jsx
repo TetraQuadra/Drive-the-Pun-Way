@@ -28,33 +28,32 @@ function Homepage() {
     ];
 
     const data = {
-        id: 9582,
-        year: 2008,
-        make: "Buick",
-        model: "Enclave",
-        type: "SUV",
-        img: "https://res.cloudinary.com/ditdqzoio/image/upload/v1687252635/cars/buick_enclave.jpg",
-        description: "The Buick Enclave is a stylish and spacious SUV known for its comfortable ride and luxurious features.",
-        fuelConsumption: "10.5",
-        engineSize: "3.6L V6",
+        id: 9640,
+        year: 2018,
+        make: "Toyota",
+        model: "Camry",
+        type: "Sedan",
+        img: "https://i.imgur.com/rtHP8E9.png",
+        description: "The Toyota Camry is a reliable and fuel-efficient sedan known for its comfortable ride, spacious interior, and advanced safety features.",
+        fuelConsumption: "7.1",
+        engineSize: "2.5L 4-cylinder",
         accessories: [
-            "Leather seats",
-            "Panoramic sunroof",
-            "Power liftgate"
+            "Leather-trimmed seats",
+            "Entune Audio Plus system",
+            "Toyota Safety Sense P"
         ],
         functionalities: [
-            "Premium audio system",
-            "Remote start",
-            "Blind-spot monitoring"
+            "Smart Key System",
+            "Adaptive Cruise Control",
+            "Lane Departure Alert"
         ],
-        rentalPrice: "$40",
-        rentalCompany: "Luxury Car Rentals",
-        address: "123 Example Street, Kiev, Ukraine",
-        rentalConditions: "Minimum age: 25\nValid driver's license\nSecurity deposit required\nCredit card required",
-        mileage: 5858,
+        rentalPrice: "$35",
+        rentalCompany: "City Car Rentals",
+        address: "234 Example Street, Odesa, Ukraine",
+        rentalConditions: "Minimum age: 21\nValid driver's license\nProof of insurance required",
+        mileage: 4982,
         city: 'Kiev',
         country: 'Ukraine',
-
     };
 
 
@@ -65,7 +64,7 @@ function Homepage() {
             <LikeButton />
             <LoadMoreButton />
             <InputDropdown options={options} onChange={onChange} />
-            {/* <Modal data={data} /> */}
+            <Modal data={data} />
         </>
     )
 }

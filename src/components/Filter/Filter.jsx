@@ -3,6 +3,7 @@ import InputDropdown from 'components/InputDropdown/InputDropdown'
 import styles from './Filter.module.css'
 import InputRange from 'components/InputRange/InputRange'
 import Button from 'components/Button/Button'
+import fillPricesFilter from 'helpers/fillPricesFilter'
 
 function Filter({ setFilter }) {
     const [filterState, setFilterState] = useState({
@@ -11,6 +12,8 @@ function Filter({ setFilter }) {
         minMileage: null,
         maxMileage: null,
     })
+
+    const pricesOptions = fillPricesFilter(10, 100, 10)
 
     const onBrandChange = (brand) => {
         setFilterState({
@@ -50,7 +53,7 @@ function Filter({ setFilter }) {
                 className={styles.brandInput}
                 label='Car brand' />
             <InputDropdown
-                options={prices}
+                options={pricesOptions}
                 name={'maxPrice'}
                 onChange={onMaxPriceChange}
                 className={styles.priceInput}

@@ -63,19 +63,19 @@
     position: absolute;
     right: 20px;
     top: 50%;
-    transform: translateY(-80%);
+    transform: translateY(-50%);
     transition: var(--transform-timing);
     pointer-events: none;
 }
 
 .shevron.active {
-    transform: translateY(-75%) rotate(180deg);
+    transform: translateY(-50%) rotate(180deg);
 }
 
 .closeButton {
     position: absolute;
     top: 50%;
-    transform: translateY(-75%);
+    transform: translateY(-50%);
     right: 40px;
 }
 
