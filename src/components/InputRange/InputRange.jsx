@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import styles from './InputRange.module.css';
 
 function InputRange({ nameMin, nameMax, onChange, label = 'Set range' }) {
-    console.log(nameMin, nameMax)
     const [range, setRange] = useState({
         [nameMin]: null,
         [nameMax]: null
@@ -17,8 +16,7 @@ function InputRange({ nameMin, nameMax, onChange, label = 'Set range' }) {
 
     useEffect(() => {
         onChange({ [nameMin]: range[nameMin], [nameMax]: range[nameMax] })
-    }, [range])
-
+    }, [range, onChange, nameMax, nameMin])
 
     return (
         <div className={styles.inputWrapper}>

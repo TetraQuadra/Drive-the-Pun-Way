@@ -56,7 +56,7 @@ const InputDropdown = ({ label = 'Label', options, placeholder = 'Select option'
                 />
                 <Shevron className={`${styles.shevron} ${isOpen && styles.active}`} />
                 {isOpen && (
-                    <ul className={styles.options}>
+                    <ul className={`${styles.options} ${className}`}>
                         <li
                             className={styles.option}
                             onClick={() => handleEmptySelect()}

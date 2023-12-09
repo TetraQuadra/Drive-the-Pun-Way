@@ -6,10 +6,12 @@
 
 .brandInput {
     width: 224px;
+    max-height: 272px;
 }
 
 .priceInput {
     width: 126px;
+    max-height: 188px;
 }
 
 .buttonSetFilter {

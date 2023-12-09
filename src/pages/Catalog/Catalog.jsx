@@ -1,16 +1,32 @@
 import Filter from 'components/Filter/Filter'
-import React from 'react'
+import setParams from 'helpers/setParams'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { getAdverts, getBrandes } from '../../redux/adverts/operations'
 
 function Catalog() {
+    const [filter, setFilter] = useState('')
+    const dispatch = useDispatch()
 
-    const setFilter = (filter) => {
+    const acceptFilter = (filter) => {
         console.log(filter)
+        setFilter(filter)
     }
+
+    useEffect(() => {
+        dispatch(getBrandes())
+
+    }, [dispatch])
+
+    useEffect(() => {
+        dispatch(getAdverts(setParams(filter)))
+    }, [filter, dispatch])
+
+
     return (
         <section>
             <h1>Catalog</h1>
-            <Filter setFilter={setFilter} />
-
+            <Filter acceptFilter={acceptFilter} />
         </section>
     )
 }
