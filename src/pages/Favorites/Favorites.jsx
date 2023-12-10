@@ -7,7 +7,7 @@ function Favorites() {
 
     const favoritedAdverts = useSelector(state => state.adverts.favorites)
     return (
-        <section>
+        <section className='section'>
             <h1 className={styles.header}>Catalog</h1>
             <p className={styles.about}>Favorited advertises:</p>
             <Adverts className={styles.adverts} adverts={favoritedAdverts} />

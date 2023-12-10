@@ -59,7 +59,7 @@ function Catalog() {
     }, [filter, dispatch])
 
     return (
-        <section>
+        <section className='section'>
             <h1 className={styles.header}>Catalog</h1>
             <Filter className={styles.filter} acceptFilter={acceptFilter} />
             <Adverts className={styles.adverts} adverts={filteredAdverts} />

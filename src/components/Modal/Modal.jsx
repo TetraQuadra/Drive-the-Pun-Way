@@ -1,5 +1,5 @@
 import CloseButton from 'components/CloseButton/CloseButton';
-import Link from 'components/Link/Link';
+import LinkCustom from 'components/LinkCustom/LinkCustom';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { closeModal } from '../../redux/adverts/slice';
@@ -100,7 +100,7 @@ function Modal({ data }) {
                 <p className={styles.description}>{data.description}</p>
                 <Accessories data={data} />
                 <RentalConditions data={data} />
-                <Link className={styles.buttonRent} href={'tel:+380730000000'}>Rental car</Link>
+                <LinkCustom className={styles.buttonRent} to={'tel:+380730000000'}>Rental car</LinkCustom>
                 <CloseButton onClick={(e) => onClose(e)} className={styles.closeButton} />
             </div>
         </div>

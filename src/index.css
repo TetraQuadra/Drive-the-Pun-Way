@@ -76,7 +76,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 2px;
 }
 
-section {
+.section {
   max-width: 1200px;
   margin: 0 auto;
   padding-bottom: 50px;
