@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Drive-the-Pun-Way/static/css/main.ebce823f.css",
-    "main.js": "/Drive-the-Pun-Way/static/js/main.2d688993.js",
+    "main.css": "/Drive-the-Pun-Way/static/css/main.27a51e3d.css",
+    "main.js": "/Drive-the-Pun-Way/static/js/main.91169f36.js",
     "static/media/logo.png": "/Drive-the-Pun-Way/static/media/logo.bd26733faf4cacc3158f.png",
     "index.html": "/Drive-the-Pun-Way/index.html",
     "static/media/heart-normal.svg": "/Drive-the-Pun-Way/static/media/heart-normal.296feb59ac66412fedd2622e6236b2a9.svg",
     "static/media/heart-active.svg": "/Drive-the-Pun-Way/static/media/heart-active.02306de4fa6d5bfcacca240b95ef8ed6.svg",
     "static/media/cross.svg": "/Drive-the-Pun-Way/static/media/cross.6a1d38e291ce3f5f366f0d33eaf3465e.svg",
     "static/media/chevron-down.svg": "/Drive-the-Pun-Way/static/media/chevron-down.0eb1838ee22a043e533de523ebaebff0.svg",
-    "main.ebce823f.css.map": "/Drive-the-Pun-Way/static/css/main.ebce823f.css.map",
-    "main.2d688993.js.map": "/Drive-the-Pun-Way/static/js/main.2d688993.js.map"
+    "main.27a51e3d.css.map": "/Drive-the-Pun-Way/static/css/main.27a51e3d.css.map",
+    "main.91169f36.js.map": "/Drive-the-Pun-Way/static/js/main.91169f36.js.map"
   },
   "entrypoints": [
-    "static/css/main.ebce823f.css",
-    "static/js/main.2d688993.js"
+    "static/css/main.27a51e3d.css",
+    "static/js/main.91169f36.js"
   ]
 }
