@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Drive-the-Pun-Way/static/css/main.ebce823f.css",
-    "main.js": "/Drive-the-Pun-Way/static/js/main.b4a3fcbb.js",
+    "main.js": "/Drive-the-Pun-Way/static/js/main.2d688993.js",
     "static/media/logo.png": "/Drive-the-Pun-Way/static/media/logo.bd26733faf4cacc3158f.png",
     "index.html": "/Drive-the-Pun-Way/index.html",
     "static/media/heart-normal.svg": "/Drive-the-Pun-Way/static/media/heart-normal.296feb59ac66412fedd2622e6236b2a9.svg",
@@ -9,10 +9,10 @@
     "static/media/cross.svg": "/Drive-the-Pun-Way/static/media/cross.6a1d38e291ce3f5f366f0d33eaf3465e.svg",
     "static/media/chevron-down.svg": "/Drive-the-Pun-Way/static/media/chevron-down.0eb1838ee22a043e533de523ebaebff0.svg",
     "main.ebce823f.css.map": "/Drive-the-Pun-Way/static/css/main.ebce823f.css.map",
-    "main.b4a3fcbb.js.map": "/Drive-the-Pun-Way/static/js/main.b4a3fcbb.js.map"
+    "main.2d688993.js.map": "/Drive-the-Pun-Way/static/js/main.2d688993.js.map"
   },
   "entrypoints": [
     "static/css/main.ebce823f.css",
-    "static/js/main.b4a3fcbb.js"
+    "static/js/main.2d688993.js"
   ]
 }
