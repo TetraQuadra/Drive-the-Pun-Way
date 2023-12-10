@@ -4,7 +4,6 @@ import { getAdverts, getBrandes } from './operations';
 const initialState = {
   modal: null,
   favorites: [],
-  favoriteIds: [],
   brands: [],
   adverts: [],
   isLoading: false,
