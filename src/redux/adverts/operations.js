@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { BASE_API_URL } from 'config';
+import { parseAddress } from 'helpers/parseAddress';
 
 export const getBrandes = createAsyncThunk(
   'adverts/brandes',
@@ -22,7 +23,9 @@ export const getAdverts = createAsyncThunk(
   async (params, { reject }) => {
     try {
       const response = await axios.get(`${BASE_API_URL}/adverts/?${params}`);
-      return response.data;
+      const handledData = parseAddress(structuredClone(response.data));
+      console.log(handledData);
+      return handledData;
     } catch (error) {
       return reject(error.message);
     }
