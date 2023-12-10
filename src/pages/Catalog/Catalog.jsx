@@ -24,7 +24,6 @@ function Catalog() {
         }
         let tempAdverts = adverts
         if (filter) {
-            console.log(filter)
             if (filter.make) {
                 tempAdverts = tempAdverts.filter(advert => advert.make === filter.make)
             }

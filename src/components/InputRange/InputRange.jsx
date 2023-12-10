@@ -26,18 +26,12 @@ function InputRange({ nameMin, nameMax, onChange, label = 'Set range' }) {
                     placeholder='From'
                     type="number"
                     name={nameMin}
-                    min={0}
-                    max={10000}
-                    value={range[nameMin] | ''}
                     onChange={(e) => handleChange(e)}
                 />
                 <input
                     placeholder='To'
                     type="number"
                     name={nameMax}
-                    min={0}
-                    max={10000}
-                    value={range[nameMax] | ''}
                     onChange={(e) => handleChange(e)}
                 />
             </div>
