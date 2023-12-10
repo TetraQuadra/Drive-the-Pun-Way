@@ -1,0 +1,30 @@
+.header {
+    background-color: var(--background-nav-color);
+    padding: 24px;
+}
+
+.logo {
+    margin-right: 12px;
+}
+
+.navWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+    gap: 24px;
+}
+
+.nav a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    transition: color var(--transform-timing);
+}
+
+.nav a:hover {
+    color: var(--main-color);
+}
