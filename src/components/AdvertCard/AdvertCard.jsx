@@ -7,16 +7,19 @@ import styles from './AdvertCard.module.css';
 
 function AdvertCard({ advert }) {
 
+
     const favoriteList = useSelector(state => state.adverts.favorites)
     const dispatch = useDispatch()
 
-    const handleToggleFavorite = (id) => {
-        dispatch(toggleFavorite(id))
+    const handleToggleFavorite = (advert) => {
+        dispatch(toggleFavorite(advert))
     }
 
     const handleLearnMore = () => {
         dispatch(openModal(advert))
     }
+
+
 
     const Characteristics = ({ data }) => {
         return (
@@ -46,7 +49,7 @@ function AdvertCard({ advert }) {
             </div>
             <Characteristics data={advert} />
             <Button onClick={handleLearnMore} className={styles.learnMoreButton}>Learn more</Button>
-            <LikeButton buttonState={favoriteList.includes(advert.id)} callbackFunction={() => handleToggleFavorite(advert.id)} className={styles.likeButton} />
+            <LikeButton buttonState={favoriteList.some(favorited => favorited.id === advert.id)} callbackFunction={() => handleToggleFavorite(advert)} className={styles.likeButton} />
         </div>
     )
 }
