@@ -1,0 +1,9 @@
+.header {
+    visibility: hidden
+}
+
+.filter {
+    margin: 0 auto;
+    max-width: 860px;
+    margin-bottom: 50px;
+}

@@ -24,7 +24,6 @@ export const getAdverts = createAsyncThunk(
     try {
       const response = await axios.get(`${BASE_API_URL}/adverts/?${params}`);
       const handledData = parseAddress(structuredClone(response.data));
-      console.log(handledData);
       return handledData;
     } catch (error) {
       return reject(error.message);

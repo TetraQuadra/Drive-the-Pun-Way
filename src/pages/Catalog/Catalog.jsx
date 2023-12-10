@@ -1,9 +1,10 @@
+import React, { useEffect, useState } from 'react'
+import styles from './Catalog.module.css';
+import { useDispatch, useSelector } from 'react-redux'
+import { getAdverts, getBrandes } from '../../redux/adverts/operations'
 import Adverts from 'components/Adverts/Adverts'
 import Filter from 'components/Filter/Filter'
 import setParams from 'helpers/setParams'
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getAdverts, getBrandes } from '../../redux/adverts/operations'
 
 function Catalog() {
     const [filter, setFilter] = useState('')
@@ -27,8 +28,8 @@ function Catalog() {
 
     return (
         <section>
-            <h1>Catalog</h1>
-            <Filter acceptFilter={acceptFilter} />
+            <h1 className={styles.header}>Catalog</h1>
+            <Filter className={styles.filter} acceptFilter={acceptFilter} />
             <Adverts adverts={adverts} />
         </section>
     )

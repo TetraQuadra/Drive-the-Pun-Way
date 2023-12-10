@@ -6,7 +6,7 @@ import Button from 'components/Button/Button'
 import fillPricesFilter from 'helpers/fillPricesFilter'
 import { useSelector } from 'react-redux'
 
-function Filter({ acceptFilter }) {
+function Filter({ acceptFilter, className }) {
     const [filterState, setFilterState] = useState({
         brand: '',
         maxPrice: '',
@@ -37,7 +37,7 @@ function Filter({ acceptFilter }) {
     }
 
     return (
-        <div className={styles.filter}>
+        <div className={`${styles.filter} ${className}`}>
             <InputDropdown
                 options={brandsOptions}
                 name={'brand'}

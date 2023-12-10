@@ -75,3 +75,8 @@ body::-webkit-scrollbar-thumb {
   background-color: rgba(158, 158, 158, 1);
   border-radius: 2px;
 }
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+}

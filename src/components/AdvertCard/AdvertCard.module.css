@@ -1,0 +1,79 @@
+.advertCard {
+    width: 274px;
+    height: 426px;
+    position: relative;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.header {
+    color: #121417;
+
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.characteristics {
+    margin-bottom: 14px;
+}
+
+.characteristics ul {
+    display: flex;
+    gap: 12px;
+    row-gap: 4px;
+    flex-wrap: wrap;
+    max-width: 320px;
+}
+
+.characteristics li {
+    color: rgba(18, 20, 23, 0.50);
+    font-size: 12px;
+    position: relative;
+}
+
+.characteristics li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    width: 0px;
+    height: 16px;
+    border: 1px solid rgba(18, 20, 23, 0.10);
+}
+
+.imageWrapper {
+    width: 274px;
+    height: 268px;
+    border-radius: 14px;
+    background-image: url(../../images/listing_vehicle_placeholder.jpg);
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.imageWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.learnMoreButton {
+    width: 274px;
+    height: 44px;
+
+    position: absolute;
+    bottom: 0;
+}
+
+.likeButton {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 10;
+}

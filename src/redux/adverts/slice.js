@@ -11,6 +11,15 @@ const initialState = {
 const advertsSlice = createSlice({
   name: 'adverts',
   initialState,
+  reducers: {
+    toggleFavorite(state, { payload }) {
+      if (state.favorites.includes(payload)) {
+        state.favorites = state.favorites.filter(id => id !== payload);
+        return;
+      }
+      state.favorites = [...state.favorites, payload];
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(getBrandes.fulfilled, (state, { payload }) => {
@@ -22,4 +31,5 @@ const advertsSlice = createSlice({
   },
 });
 
+export const { toggleFavorite } = advertsSlice.actions;
 export const advertsReducer = advertsSlice.reducer;

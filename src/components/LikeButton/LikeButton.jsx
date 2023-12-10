@@ -3,16 +3,12 @@ import styles from './LikeButton.module.css'
 import { ReactComponent as HeartNormal } from 'images/icons/heart-normal.svg';
 import { ReactComponent as HeartActive } from 'images/icons/heart-active.svg';
 
-function LikeButton({ buttonState, callbackFunction }) {
-    const [isActive, setIsActive] = useState(buttonState)
+function LikeButton({ buttonState, callbackFunction, className }) {
 
-    const handleClick = () => {
-        setIsActive(!isActive)
-    }
     return (
-        <button className={styles.button} onClick={handleClick}>
+        <button className={`${styles.button} ${className}`} onClick={() => callbackFunction()}>
             {
-                isActive ? <HeartActive /> : <HeartNormal />
+                buttonState ? <HeartActive /> : <HeartNormal />
             }
         </button>
     )
