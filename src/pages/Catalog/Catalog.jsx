@@ -1,12 +1,14 @@
+import Adverts from 'components/Adverts/Adverts'
 import Filter from 'components/Filter/Filter'
 import setParams from 'helpers/setParams'
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { getAdverts, getBrandes } from '../../redux/adverts/operations'
 
 function Catalog() {
     const [filter, setFilter] = useState('')
     const dispatch = useDispatch()
+    const adverts = useSelector(state => state.adverts.adverts)
 
     const acceptFilter = (filter) => {
         console.log(filter)
@@ -27,6 +29,7 @@ function Catalog() {
         <section>
             <h1>Catalog</h1>
             <Filter acceptFilter={acceptFilter} />
+            <Adverts adverts={adverts} />
         </section>
     )
 }
