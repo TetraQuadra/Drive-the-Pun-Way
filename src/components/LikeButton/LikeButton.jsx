@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './LikeButton.module.css'
 import { ReactComponent as HeartNormal } from 'images/icons/heart-normal.svg';
 import { ReactComponent as HeartActive } from 'images/icons/heart-active.svg';

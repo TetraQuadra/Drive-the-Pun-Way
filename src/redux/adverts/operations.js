@@ -22,7 +22,9 @@ export const getAdverts = createAsyncThunk(
   'adverts/adverts',
   async (params, { reject }) => {
     try {
-      const response = await axios.get(`${BASE_API_URL}/adverts/?${params}`);
+      const response = await axios.get(
+        `${BASE_API_URL}/adverts/?sortBy=rentalPrice&${params}`
+      );
       const handledData = parseAddress(structuredClone(response.data));
       return handledData;
     } catch (error) {

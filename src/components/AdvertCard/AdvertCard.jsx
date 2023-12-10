@@ -2,7 +2,7 @@ import Button from 'components/Button/Button';
 import LikeButton from 'components/LikeButton/LikeButton';
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleFavorite } from '../../redux/adverts/slice';
+import { openModal, toggleFavorite } from '../../redux/adverts/slice';
 import styles from './AdvertCard.module.css';
 
 function AdvertCard({ advert }) {
@@ -12,6 +12,10 @@ function AdvertCard({ advert }) {
 
     const handleToggleFavorite = (id) => {
         dispatch(toggleFavorite(id))
+    }
+
+    const handleLearnMore = () => {
+        dispatch(openModal(advert))
     }
 
     const Characteristics = ({ data }) => {
@@ -41,7 +45,7 @@ function AdvertCard({ advert }) {
                 <span className={styles.header}>${advert.rentalPrice}</span>
             </div>
             <Characteristics data={advert} />
-            <Button className={styles.learnMoreButton}>Learn more</Button>
+            <Button onClick={handleLearnMore} className={styles.learnMoreButton}>Learn more</Button>
             <LikeButton buttonState={favoriteList.includes(advert.id)} callbackFunction={() => handleToggleFavorite(advert.id)} className={styles.likeButton} />
         </div>
     )

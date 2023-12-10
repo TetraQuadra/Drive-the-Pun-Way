@@ -16,7 +16,7 @@ const InputDropdown = ({ label = 'Label', options, placeholder = 'Select option'
 
     const handleEmptySelect = () => {
         setSelectedOption(placeholder)
-        onChange(null);
+        onChange({ [name]: null });
         setIsOpen(false);
     }
 
@@ -66,6 +66,9 @@ const InputDropdown = ({ label = 'Label', options, placeholder = 'Select option'
                                 key={option.value}
                                 className={styles.option}
                                 onClick={() => handleOptionClick(option)}
+                                style={{
+                                    backgroundColor: selectedOption === option.value ? '#f0f0f0' : 'white',
+                                }}
                             >
                                 {option.label}
                             </li>

@@ -6,6 +6,9 @@
     text-decoration: underline;
     color: var(--main-color);
     transition: color var(--transform-timing);
+
+    display: block;
+    margin: 0 auto;
 }
 
 .button:hover {

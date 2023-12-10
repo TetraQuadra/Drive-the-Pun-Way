@@ -1,20 +1,23 @@
 import CloseButton from 'components/CloseButton/CloseButton';
 import Link from 'components/Link/Link';
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { closeModal } from '../../redux/adverts/slice';
 import styles from './Modal.module.css';
 
-function Modal({ handleClose, data }) {
+function Modal({ data }) {
+    const dispatch = useDispatch()
 
     const onClose = (e) => {
         if (e.target === e.currentTarget) {
-            handleClose()
+            dispatch(closeModal())
         }
     }
 
     useEffect(() => {
         const onKeyDown = e => {
             if (e.code === 'Escape') {
-                handleClose();
+                dispatch(closeModal())
             }
         };
 
@@ -23,7 +26,7 @@ function Modal({ handleClose, data }) {
         return () => {
             document.removeEventListener('keydown', onKeyDown);
         };
-    }, [handleClose]);
+    }, [dispatch]);
 
     const Characteristics = ({ data }) => {
         return (

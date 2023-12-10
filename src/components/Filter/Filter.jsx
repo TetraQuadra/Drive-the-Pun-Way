@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 
 function Filter({ acceptFilter, className }) {
     const [filterState, setFilterState] = useState({
-        brand: '',
+        make: '',
         maxPrice: '',
         minMileage: null,
         maxMileage: null,
@@ -40,7 +40,7 @@ function Filter({ acceptFilter, className }) {
         <div className={`${styles.filter} ${className}`}>
             <InputDropdown
                 options={brandsOptions}
-                name={'brand'}
+                name={'make'}
                 onChange={onFilterChange}
                 className={styles.brandInput}
                 label='Car brand' />
@@ -51,7 +51,7 @@ function Filter({ acceptFilter, className }) {
                 className={styles.priceInput}
                 placeholder={'To $'}
                 label='Price / 1 hour' />
-            <InputRange nameMax={'maxMileage'} nameMin={'minMileage'} onChange={onFilterChange} />
+            <InputRange label={'Сar mileage / km'} nameMax={'maxMileage'} nameMin={'minMileage'} onChange={onFilterChange} />
             <Button className={styles.buttonSetFilter} onClick={() => onFilterSet(filterState)}>Search</Button>
         </div>
     )

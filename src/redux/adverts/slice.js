@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getAdverts, getBrandes } from './operations';
 
 const initialState = {
+  modal: null,
   favorites: [],
   brands: [],
   adverts: [],
@@ -19,6 +20,12 @@ const advertsSlice = createSlice({
       }
       state.favorites = [...state.favorites, payload];
     },
+    openModal(state, { payload }) {
+      state.modal = payload;
+    },
+    closeModal(state) {
+      state.modal = null;
+    },
   },
   extraReducers: builder => {
     builder
@@ -31,5 +38,5 @@ const advertsSlice = createSlice({
   },
 });
 
-export const { toggleFavorite } = advertsSlice.actions;
+export const { toggleFavorite, openModal, closeModal } = advertsSlice.actions;
 export const advertsReducer = advertsSlice.reducer;
