@@ -30,6 +30,9 @@ const advertsSlice = createSlice({
     closeModal(state) {
       state.modal = null;
     },
+    emptyAdverts(state) {
+      state.adverts = [];
+    },
   },
   extraReducers: builder => {
     builder
@@ -37,10 +40,11 @@ const advertsSlice = createSlice({
         state.brands = payload;
       })
       .addCase(getAdverts.fulfilled, (state, { payload }) => {
-        state.adverts = payload;
+        state.adverts = [...state.adverts, ...payload];
       });
   },
 });
 
-export const { toggleFavorite, openModal, closeModal } = advertsSlice.actions;
+export const { toggleFavorite, openModal, closeModal, emptyAdverts } =
+  advertsSlice.actions;
 export const advertsReducer = advertsSlice.reducer;

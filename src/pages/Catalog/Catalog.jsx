@@ -6,6 +6,7 @@ import Adverts from 'components/Adverts/Adverts'
 import Filter from 'components/Filter/Filter'
 import setParams from 'helpers/setParams'
 import LoadMoreButton from 'components/LoadMoreButton/LoadMoreButton';
+import { emptyAdverts } from '../../redux/adverts/slice';
 
 function Catalog() {
     const [currentPage, setCurrentPage] = useState(1)
@@ -15,7 +16,7 @@ function Catalog() {
     const adverts = useSelector(state => state.adverts.adverts)
 
 
-    //since mockapi.io cant use filters like "greater than 'x'" so i cant build proper request to ask exactly 12 advers that will match filters that uses params range, in this case only solution i found is to get all data from api and emulate this by filtering adverts here, this part can be easily removed if API will have proper handling of params
+    //since mockapi.io cant use filters like "greater than 'x'" so i cant build proper request to ask exactly 12 advers that will match filters that uses params range, in this case only solution i found is to get all data from api ignoring pagination and emulate this by filtering adverts here, this part can be easily removed if API will have proper handling of params
     const [filteredAdverts, setFilteredAdverts] = useState([])
 
     useEffect(() => {
@@ -24,9 +25,6 @@ function Catalog() {
         }
         let tempAdverts = adverts
         if (filter) {
-            if (filter.make) {
-                tempAdverts = tempAdverts.filter(advert => advert.make === filter.make)
-            }
             if (filter.maxPrice) {
                 tempAdverts = tempAdverts.filter(advert => advert.rentalPrice <= filter.maxPrice)
             }
@@ -37,15 +35,14 @@ function Catalog() {
                 tempAdverts = tempAdverts.filter(advert => (advert.mileage >= filter.minMileage))
             }
         }
-        const endIndex = perPage * currentPage;
-        const slicedAdverts = tempAdverts.slice(0, endIndex);
-        setFilteredAdverts(slicedAdverts);
-    }, [currentPage, filter, adverts]);
+        setFilteredAdverts(tempAdverts);
+    }, [filter, adverts]);
     //end of 'not proud of' section
 
 
 
     const acceptFilter = (filter) => {
+        dispatch(emptyAdverts())
         setFilter(filter)
         setCurrentPage(1)
     }
@@ -55,8 +52,8 @@ function Catalog() {
     }, [dispatch])
 
     useEffect(() => {
-        dispatch(getAdverts(setParams(filter)))
-    }, [filter, dispatch])
+        dispatch(getAdverts(setParams(perPage, currentPage, filter)))
+    }, [filter, dispatch, currentPage])
 
     return (
         <section className='section'>

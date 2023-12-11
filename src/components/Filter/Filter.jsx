@@ -30,7 +30,7 @@ function Filter({ acceptFilter, className }) {
 
 
     const onFilterSet = () => {
-        if (filterState.minMileage > filterState.maxMileage) {
+        if (filterState.minMileage > filterState.maxMileage && filterState.maxMileage) {
             return alert('Minimum milage cannot be higher than maximum milage')
         }
         acceptFilter(filterState)
