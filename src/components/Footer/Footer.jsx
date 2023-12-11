@@ -5,7 +5,7 @@ function Footer() {
     return (
         <footer className={styles.footer}>
             <div className={styles.footerWrapper}>
-                <p>2023 Kyiv, Shift Gears co.</p>
+                <p>2023 Kyiv, Shift Gears co. +380730000000</p>
             </div>
         </footer>
     )
