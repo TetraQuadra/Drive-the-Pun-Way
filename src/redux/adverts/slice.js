@@ -46,6 +46,13 @@ const advertsSlice = createSlice({
         if (payload.length < 12) {
           state.pagesEndReached = true;
         }
+        state.isLoading = false;
+      })
+      .addCase(getAdverts.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(getAdverts.rejected, state => {
+        state.isLoading = false;
       });
   },
 });

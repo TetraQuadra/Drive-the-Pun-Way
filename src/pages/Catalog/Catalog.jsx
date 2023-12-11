@@ -14,7 +14,10 @@ function Catalog() {
     const perPage = 12
     const dispatch = useDispatch()
     const adverts = useSelector(state => state.adverts.adverts)
+    const isLoading = useSelector(state => state.adverts.isLoading)
     const pagesEndReached = useSelector(state => state.adverts.pagesEndReached)
+
+    console.log(isLoading)
 
     const acceptFilter = (filter) => {
         dispatch(emptyAdverts())
@@ -35,6 +38,7 @@ function Catalog() {
         <section className='section'>
             <h1 className={styles.header}>Catalog</h1>
             <Filter className={styles.filter} acceptFilter={acceptFilter} />
+            {(adverts.length < 1) && !isLoading && <p>There is no adverts that matches filters, try to change them!</p>}
             <Adverts className={styles.adverts} adverts={adverts} />
             {!pagesEndReached && <LoadMoreButton callbackFuntion={() => setCurrentPage(currentPage + 1)} />}
         </section>
