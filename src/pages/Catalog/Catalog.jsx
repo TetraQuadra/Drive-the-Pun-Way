@@ -14,32 +14,7 @@ function Catalog() {
     const perPage = 12
     const dispatch = useDispatch()
     const adverts = useSelector(state => state.adverts.adverts)
-
-
-    //since mockapi.io cant use filters like "greater than 'x'" so i cant build proper request to ask exactly 12 advers that will match filters that uses params range, in this case only solution i found is to get all data from api ignoring pagination and emulate this by filtering adverts here, this part can be easily removed if API will have proper handling of params
-    const [filteredAdverts, setFilteredAdverts] = useState([])
-
-    useEffect(() => {
-        if (!Array.isArray(adverts)) {
-            return;
-        }
-        let tempAdverts = adverts
-        if (filter) {
-            if (filter.maxPrice) {
-                tempAdverts = tempAdverts.filter(advert => advert.rentalPrice <= filter.maxPrice)
-            }
-            if (filter.maxMileage) {
-                tempAdverts = tempAdverts.filter(advert => (advert.mileage <= filter.maxMileage))
-            }
-            if (filter.minMileage) {
-                tempAdverts = tempAdverts.filter(advert => (advert.mileage >= filter.minMileage))
-            }
-        }
-        setFilteredAdverts(tempAdverts);
-    }, [filter, adverts]);
-    //end of 'not proud of' section
-
-
+    const pagesEndReached = useSelector(state => state.adverts.pagesEndReached)
 
     const acceptFilter = (filter) => {
         dispatch(emptyAdverts())
@@ -48,6 +23,7 @@ function Catalog() {
     }
 
     useEffect(() => {
+        dispatch(emptyAdverts())
         dispatch(getBrandes())
     }, [dispatch])
 
@@ -59,8 +35,8 @@ function Catalog() {
         <section className='section'>
             <h1 className={styles.header}>Catalog</h1>
             <Filter className={styles.filter} acceptFilter={acceptFilter} />
-            <Adverts className={styles.adverts} adverts={filteredAdverts} />
-            <LoadMoreButton callbackFuntion={() => setCurrentPage(currentPage + 1)} />
+            <Adverts className={styles.adverts} adverts={adverts} />
+            {!pagesEndReached && <LoadMoreButton callbackFuntion={() => setCurrentPage(currentPage + 1)} />}
         </section>
     )
 }

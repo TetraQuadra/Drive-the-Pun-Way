@@ -4,7 +4,7 @@ const setParams = (perPage, currentPage, filter) => {
     params = params.concat(`&make=${filter.make}`);
   }
   params = params.concat(`&limit=${perPage}&page=${currentPage}`);
-  return params;
+  return { params, filter };
 };
 
 export default setParams;

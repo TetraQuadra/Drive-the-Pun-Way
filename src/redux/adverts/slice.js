@@ -4,6 +4,7 @@ import { getAdverts, getBrandes } from './operations';
 const initialState = {
   modal: null,
   favorites: [],
+  pagesEndReached: false,
   brands: [],
   adverts: [],
   isLoading: false,
@@ -13,7 +14,7 @@ const advertsSlice = createSlice({
   name: 'adverts',
   initialState,
   reducers: {
-    //Since Mockapi.io does not allow multiple results to be returned in response to a query with an array of id's, it is necessary to store entire adverts. In the real API to ensure data consistency when ads may change over time, only the advert id's can be stored here, but
+    //Since Mockapi.io does not allow multiple results to be returned in response to a query with an array of id's, it is necessary to store entire adverts. In the real API to ensure data consistency when ads may change over time, only the advert id's can be stored here
     toggleFavorite(state, { payload }) {
       const existingIndex = state.favorites.findIndex(
         ad => ad.id === payload.id
@@ -32,6 +33,7 @@ const advertsSlice = createSlice({
     },
     emptyAdverts(state) {
       state.adverts = [];
+      state.pagesEndReached = false;
     },
   },
   extraReducers: builder => {
@@ -41,6 +43,9 @@ const advertsSlice = createSlice({
       })
       .addCase(getAdverts.fulfilled, (state, { payload }) => {
         state.adverts = [...state.adverts, ...payload];
+        if (payload.length < 12) {
+          state.pagesEndReached = true;
+        }
       });
   },
 });
